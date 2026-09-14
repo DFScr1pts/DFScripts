@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="DFScripts — premium FiveM resources, custom development and modern interfaces.">
+
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <title>DFScripts — FiveM Development</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css?v=9">
+</head>
+
+<body>
+
+    <div class="page-noise"></div>
+    <div class="grid"></div>
+
+    <header class="navbar">
+
+        <a href="#home" class="brand" data-nav-link>
+
+            <span class="brand-mark">
+                <img src="/images/logo.png" alt="DFScripts">
+            </span>
+
+            <span class="brand-text">
+                <strong>DFSCRIPTS</strong>
+                <small>FIVEM DEVELOPMENT</small>
+            </span>
+
+        </a>
+
+        <nav class="nav-tabs" aria-label="Store navigation">
+
+            <a href="#home" data-section="home" class="active">Home</a>
+            <a href="#store" data-section="store">Store</a>
+                        <a href="#deals" data-section="deals">Deals</a>
+            <a href="#development" data-section="development">Development</a>
+            <a href="#docs" data-section="docs">Docs</a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                class="round-btn"
+                id="searchButton"
+                type="button"
+                aria-label="Search"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <div class="auth-area" id="authArea">
+
+                <a
+                    class="discord-login"
+                    id="discordLogin"
+                    href="/auth/discord"
+                >
+                    <i class="fa-brands fa-discord"></i>
+                    <span>Login with Discord</span>
+                </a>
+
+                <div
+                    class="user-menu"
+                    id="discordProfile"
+                    style="display:none;"
+                >
+
+                    <button
+                        class="user-profile"
+                        id="profileToggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Open Discord profile"
+                    >
+
+                        <img
+                            src="https://cdn.discordapp.com/embed/avatars/0.png"
+                            alt="Discord avatar"
+                            data-discord-avatar
+                        >
+
+                        <span class="user-profile-copy">
+                            <strong data-discord-username>Member</strong>
+                            <small data-discord-role>MEMBER</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down user-chevron"></i>
+
+                    </button>
+
+                    <div class="user-dropdown">
+
+                        <div class="dropdown-user">
+
+                            <img
+                                src="https://cdn.discordapp.com/embed/avatars/0.png"
+                                alt="Discord avatar"
+                                data-discord-avatar
+                            >
+
+                            <div>
+                                <strong data-discord-username>Member</strong>
+                                <span data-discord-role>MEMBER</span>
+                            </div>
+
+                        </div>
+
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-role-list">
+
+                            <div class="dropdown-role-title">
+                                YOUR DFSCRIPTS ROLE
+                            </div>
+
+                            <div class="role-badge">
+                                <span class="role-dot"></span>
+                                <span data-profile-role-name>MEMBER</span>
+                            </div>
+
+                        </div>
+
+                        <div class="dropdown-divider"></div>
+
+                        <a class="logout-link" href="/auth/logout">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button
+                class="cart"
+                id="cartButton"
+                type="button"
+                aria-label="Open cart"
+            >
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Cart</span>
+                <b id="cartCount">0</b>
+            </button>
+
+        </div>
+
+        <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            type="button"
+            aria-label="Open menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home" data-section="home">Home</a>
+        <a href="#store" data-section="store">Store</a>
+                <a href="#deals" data-section="deals">Deals</a>
+        <a href="#development" data-section="development">Development</a>
+        <a href="#docs" data-section="docs">Docs</a>
+
+        <a
+            class="mobile-discord"
+            href="https://discord.gg/dfscripts"
+            target="_blank"
+            rel="noopener"
+        >
+            <i class="fa-brands fa-discord"></i>
+            Join Discord
+        </a>
+
+    </div>
+
+
+    <main id="home">
+
+        <section class="hero-shell">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    <span class="pulse"></span>
+                    DFSCRIPTS / FIVE M DEVELOPMENT
+                </div>
+
+                <h1>
+                    Scripts that make<br>
+                    <span>FiveM better.</span>
+                </h1>
+
+                <p>
+                    Premium FiveM resources, modern interfaces and custom
+                    development built with clean code, performance and
+                    real-world usability in mind.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a class="button button-light" href="#store">
+                        Explore resources
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a
+                        class="button button-dark"
+                        href="https://discord.gg/dfscripts"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-discord"></i>
+                        Join Discord
+                    </a>
+
+                </div>
+
+                <div class="trust-row">
+
+                    <div>
+                        <strong>ESX</strong>
+                        <span>SUPPORTED</span>
+                    </div>
+
+                    <div>
+                        <strong>QB</strong>
+                        <span>SUPPORTED</span>
+                    </div>
+
+                    <div>
+                        <strong>0.00ms</strong>
+                        <span>PERFORMANCE</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>SUPPORT</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="visual-topline">
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        DFSCRIPTS / PRODUCT PREVIEW
+                    </span>
+
+                    <span>DF / 01</span>
+                </div>
+
+                <div class="visual-screen">
+
+                    <div class="product-preview-head">
+
+                        <div class="preview-brand">
+                            <img src="/images/logo.png" alt="DFScripts">
+                        </div>
+
+                        <div>
+                            <b>DF SCRIPTS</b>
+                            <small>PREMIUM FIVEM RESOURCES</small>
+                        </div>
+
+                        <span class="preview-status">
+                            <i></i>
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-main">
+
+                        <div class="preview-large">
+
+                            <span class="preview-kicker">
+                                FEATURED RESOURCE
+                            </span>
+
+                            <strong>
+                                DF SCRIPTS
+                            </strong>
+
+                            <b>
+                                BANKING
+                            </b>
+
+                            <p>
+                                Modern banking interface designed
+                                for performance and usability.
+                            </p>
+
+                            <div class="preview-actions">
+                                <span>ESX</span>
+                                <span>QB</span>
+                                <span>OX</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-side">
+
+                            <div>
+                                <small>FRAMEWORK</small>
+                                <strong>ESX / QB</strong>
+                            </div>
+
+                            <div>
+                                <small>UI</small>
+                                <strong>MODERN</strong>
+                            </div>
+
+                            <div>
+                                <small>TYPE</small>
+                                <strong>PREMIUM</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-lines">
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Clean architecture
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Optimized client logic
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Easy configuration
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="visual-footer">
+                    <span>PERFORMANCE FIRST</span>
+                    <span>MODERN UI</span>
+                    <span>CLEAN CODE</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="stats-section reveal-on-scroll">
+
+            <div class="stat-box">
+                <strong>25<span>+</span></strong>
+                <small>RESOURCES IN DEVELOPMENT</small>
+            </div>
+
+            <div class="stat-box">
+                <strong>100<span>%</span></strong>
+                <small>FOCUSED ON QUALITY</small>
+            </div>
+
+            <div class="stat-box">
+                <strong>24<span>/7</span></strong>
+                <small>COMMUNITY SUPPORT</small>
+            </div>
+
+            <div class="stat-box">
+                <strong>01</strong>
+                <small>GOAL — BETTER RESOURCES</small>
+            </div>
+
+        </section>
+
+
+        <section class="store-section reveal-on-scroll" id="store">
+
+            <div class="section-head">
+
+                <div>
+                    <span class="section-kicker">THE CATALOG</span>
+
+                    <h2>
+                        Custom work now.
+                        <span>More products soon.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    Our public store is currently waiting for Tebex approval.
+                    Until then, custom FiveM development is available directly
+                    through a Discord ticket.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid dfs-store-grid compact-product-grid">
+
+                <article class="product-card request-card featured custom-request-product product-ticket-card">
+                    <div class="product-mini-icon"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="product-copy">
+                        <div class="product-topline"><span>CUSTOM DEVELOPMENT</span><b>DISCORD TICKET</b></div>
+                        <h3>Custom Script Development</h3>
+                        <p>Need a custom script, system or NUI? Open a ticket and discuss your idea, scope and pricing directly with DFScripts.</p>
+                    </div>
+                    <a class="product-action" href="https://discord.gg/dfscripts" target="_blank" rel="noopener">
+                        <span>CREATE TICKET</span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="product-card soon-product compact-product-card product-modal-trigger" data-product="banking" data-price="15" data-category="SYSTEM" data-title="Banking System" data-image="/images/logo.png" data-description="A modern FiveM banking system designed to make everyday banking simple, clean and reliable. Manage player accounts, deposits, withdrawals and transfers through a polished interface." data-features="Player banking|Deposits & withdrawals|Money transfers|Transaction-focused interface|Clean NUI experience">
+                    <div class="product-mini-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="product-copy"><div class="product-topline"><span>SYSTEM</span><b>UNAVAILABLE</b></div><h3>Banking System</h3><p>Modern banking system for FiveM.</p></div>
+                    <div class="soon-card-meta"><span>€15.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card available-product compact-product-card product-modal-trigger" data-product="hud" data-price="6" data-category="UI / HUD" data-title="HUD, CAR HUD" data-image="/images/hud.png" data-description="A clean and modern player and vehicle HUD built to keep important information visible without taking over the screen. Designed for a minimal, readable FiveM experience." data-features="Player HUD|Vehicle HUD|Minimal interface|Readable information|Modern NUI design">
+                    <div class="product-preview-image"><img src="/images/hud.png" alt="HUD, CAR HUD"></div>
+                    <div class="product-copy"><div class="product-topline"><span>UI / HUD</span><b>AVAILABLE</b></div><h3>HUD, CAR HUD</h3><p>Clean player and vehicle interface.</p></div>
+                    <div class="available-card-meta"><span>€6.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card available-product compact-product-card product-modal-trigger" data-product="multichar-identity" data-price="6" data-category="MULTICHARACTER" data-title="Multicharacter + Identity" data-image="/images/multichar.png" data-gallery="/images/multichar.png|/images/multichar-identity.png" data-description="A complete multicharacter and identity package built around a clean, modern FiveM experience. Character selection and identity creation are combined into one affordable resource." data-features="Multicharacter selection|Identity system|Clean NUI interface|Character management|Modern FiveM design|Easy configuration">
+                    <div class="product-preview-image multichar-preview">
+                        <div class="product-preview-gallery">
+                            <div class="product-preview-shot"><img src="/images/multichar.png" alt="Multicharacter"></div>
+                            <div class="product-preview-shot"><img src="/images/multichar-identity.png" alt="Identity"></div>
+                        </div>
+                    </div>
+                    <div class="product-copy"><div class="product-topline"><span>MULTICHARACTER</span><b>AVAILABLE</b></div><h3>Multicharacter + Identity</h3><p>Character selection and identity in one system.</p></div>
+                    <div class="available-card-meta"><span>€6.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card soon-product compact-product-card product-modal-trigger" data-product="reports" data-price="10" data-category="STAFF" data-title="Report System" data-description="A streamlined report system for handling player reports faster and keeping staff interactions organized. Built around a simple workflow that avoids unnecessary clutter." data-features="Player reports|Staff workflow|Report management|Clean interface|Fast interactions">
+                    <div class="product-mini-icon"><i class="fa-solid fa-flag"></i></div>
+                    <div class="product-copy"><div class="product-topline"><span>STAFF</span><b>SOON</b></div><h3>Report System</h3><p>Fast player reports and staff workflow.</p></div>
+                    <div class="soon-card-meta"><span>€10.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card soon-product compact-product-card product-modal-trigger" data-product="ems-items" data-price="2" data-category="EMS" data-title="Collect Items in EMS" data-description="A lightweight recovery system that lets players collect their stored inventory items through EMS after death. Designed for a straightforward and controlled recovery flow." data-features="Death item storage|EMS recovery flow|Player verification|Simple interaction|Inventory-focused system">
+                    <div class="product-mini-icon"><i class="fa-solid fa-kit-medical"></i></div>
+                    <div class="product-copy"><div class="product-topline"><span>EMS</span><b>SOON</b></div><h3>Collect Items in EMS</h3><p>Recover stored items after death.</p></div>
+                    <div class="soon-card-meta"><span>€2.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card soon-product compact-product-card product-modal-trigger" data-product="mdt" data-price="20" data-category="POLICE" data-title="MDT" data-description="A modern mobile data terminal concept for police departments, focused on presenting important information through a structured and easy-to-use interface." data-features="Police information hub|Modern NUI|Structured records|Fast navigation|Expandable system">
+                    <div class="product-mini-icon"><i class="fa-solid fa-table-columns"></i></div>
+                    <div class="product-copy"><div class="product-topline"><span>POLICE</span><b>SOON</b></div><h3>MDT</h3><p>Modern mobile data terminal system.</p></div>
+                    <div class="soon-card-meta"><span>€20.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+                <article class="product-card soon-product compact-product-card product-modal-trigger" data-product="pdm" data-price="12" data-category="DEALERSHIP" data-title="PDM" data-description="A vehicle dealership system focused on a clean browsing and purchasing experience. Built to make dealership interaction feel more modern and organized." data-features="Vehicle browsing|Dealership interface|Vehicle information|Modern NUI|Purchase-focused flow">
+                    <div class="product-mini-icon"><i class="fa-solid fa-car"></i></div>
+                    <div class="product-copy"><div class="product-topline"><span>DEALERSHIP</span><b>SOON</b></div><h3>PDM</h3><p>Vehicle dealership and management system.</p></div>
+                    <div class="soon-card-meta"><span>€12.00</span><b>VIEW DETAILS</b></div>
+                </article>
+
+            </div>
+
+        </section>
+
+            <div class="release-radar">
+                <div class="release-radar-head">
+                    <div><span class="section-kicker">DF RELEASE RADAR</span><h3>Something bigger is <span>loading.</span></h3></div>
+                    <div class="radar-live"><i></i> LIVE PIPELINE</div>
+                </div>
+                <div class="release-track">
+                    <div class="release-line"><span></span></div>
+                    <div class="release-step active"><b>01</b><strong>Custom</strong><small>OPEN NOW</small></div>
+                    <div class="release-step"><b>02</b><strong>Development</strong><small>IN PROGRESS</small></div>
+                    <div class="release-step"><b>03</b><strong>Tebex approval</strong><small>PENDING</small></div>
+                    <div class="release-step"><b>04</b><strong>Public launch</strong><small>SOON</small></div>
+                </div>
+                <div class="release-radar-foot"><span>NEW RESOURCES ARE BEING BUILT BEHIND THE SCENES</span><b>DFSCRIPTS / 2026</b></div>
+            </div>
+
+            <section class="build-console reveal-on-scroll" aria-label="DFScripts live build console">
+                <div class="build-console-head">
+                    <div>
+                        <span class="section-kicker">DF SYSTEM / LIVE BUILD</span>
+                        <h3>Behind every release, <span>there is a build.</span></h3>
+                    </div>
+                    <div class="console-status"><i></i> BUILD SERVER ONLINE</div>
+                </div>
+
+                <div class="build-console-body">
+                    <div class="console-window">
+                        <div class="console-bar">
+                            <div class="console-dots"><i></i><i></i><i></i></div>
+                            <span>dfscripts@build:~</span>
+                            <b>LIVE</b>
+                        </div>
+                        <div class="console-content">
+                            <p><em>01</em><span>$</span> initializing <strong>DFScripts</strong> build environment...</p>
+                            <p><em>02</em><span>$</span> loading framework adapters <strong>[ESX / QB]</strong></p>
+                            <p><em>03</em><span>$</span> checking integrations <strong>[OX / NUI / VOICE]</strong></p>
+                            <p><em>04</em><span>$</span> compiling resource modules <strong class="typing">████████████████</strong></p>
+                            <p><em>05</em><span>$</span> running final checks <strong class="success">PASS</strong></p>
+                            <p class="console-cursor"><em>06</em><span>$</span> waiting for next release<span class="blink">_</span></p>
+                        </div>
+                    </div>
+
+                    <div class="build-metrics">
+                        <div class="metric-card">
+                            <span>BUILD STATUS</span>
+                            <strong>READY</strong>
+                            <div class="metric-line"><i></i></div>
+                        </div>
+                        <div class="metric-card">
+                            <span>FRAMEWORKS</span>
+                            <strong>ESX + QB</strong>
+                            <div class="metric-line"><i></i></div>
+                        </div>
+                        <div class="metric-card">
+                            <span>RELEASE QUEUE</span>
+                            <strong>06 PROJECTS</strong>
+                            <div class="metric-line"><i></i></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        <section class="df-lab reveal-on-scroll" aria-label="DFScripts development lab">
+
+            <div class="df-lab-head">
+                <div>
+                    <span class="section-kicker">DF LAB / PIPELINE</span>
+                    <h2>Built now.<br><span>Released when ready.</span></h2>
+                </div>
+                <div class="df-lab-status"><i></i> ACTIVE DEVELOPMENT</div>
+            </div>
+
+            <div class="df-lab-stage">
+                <div class="df-lab-orbit orbit-one"></div>
+                <div class="df-lab-orbit orbit-two"></div>
+                <div class="df-lab-core">
+                    <span>DF</span>
+                    <b>SCRIPTS</b>
+                    <small>BUILD PIPELINE</small>
+                </div>
+                <div class="df-lab-scan"></div>
+            </div>
+
+            <div class="df-lab-grid">
+                <div class="df-lab-item">
+                    <span>01</span>
+                    <strong>Custom builds</strong>
+                    <p>Private systems made around your exact requirements.</p>
+                    <b class="lab-state">AVAILABLE</b>
+                </div>
+                <div class="df-lab-item">
+                    <span>02</span>
+                    <strong>Store resources</strong>
+                    <p>Ready-to-use FiveM resources are currently in production.</p>
+                    <b class="lab-state">SOON</b>
+                </div>
+                <div class="df-lab-item">
+                    <span>03</span>
+                    <strong>ESX / QB</strong>
+                    <p>Flexible integrations built for modern server stacks.</p>
+                    <b class="lab-state">FOCUS</b>
+                </div>
+                <div class="df-lab-item">
+                    <span>04</span>
+                    <strong>Tebex launch</strong>
+                    <p>Public products will appear here after approval.</p>
+                    <b class="lab-state">PENDING</b>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="compatibility-section reveal-on-scroll">
+
+            <div class="compatibility-copy">
+
+                <span class="section-kicker">COMPATIBILITY</span>
+
+                <h2>
+                    Built for the
+                    <span>FiveM ecosystem.</span>
+                </h2>
+
+                <p>
+                    Our resources are designed around the tools developers
+                    and server owners already use.
+                </p>
+
+            </div>
+
+            <div class="compatibility-grid">
+
+                <div class="compatibility-card">
+                    <strong>ESX</strong>
+                    <span>FRAMEWORK</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="compatibility-card">
+                    <strong>QB</strong>
+                    <span>FRAMEWORK</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="compatibility-card">
+                    <strong>OX</strong>
+                    <span>ECOSYSTEM</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="compatibility-card">
+                    <strong>STANDALONE</strong>
+                    <span>RESOURCES</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="tech-marquee reveal-on-scroll" aria-label="DFScripts technologies and ecosystem">
+
+            <div class="tech-marquee-top">
+                <span class="section-kicker">WHAT WE FOCUS ON</span>
+                <p>Modern FiveM frameworks, libraries and integrations.</p>
+            </div>
+
+            <div class="tech-marquee-window">
+                <div class="tech-marquee-track">
+
+                    <div class="tech-marquee-group">
+                        <span>ESX</span>
+                        <i>×</i>
+                        <span>QB</span>
+                        <i>×</i>
+                        <span>OX_TARGET</span>
+                        <i>×</i>
+                        <span>QB_TARGET</span>
+                        <i>×</i>
+                        <span>OX_INVENTORY</span>
+                        <i>×</i>
+                        <span>OX_LIB</span>
+                        <i>×</i>
+                        <span>OXMYSQL</span>
+                        <i>×</i>
+                        <span>PMA-VOICE</span>
+                        <i>×</i>
+                        <span>NUI</span>
+                        <i>×</i>
+                        <span>FIVEM</span>
+                        <i>×</i>
+                        <span>LUA</span>
+                        <i>×</i>
+                        <span>JAVASCRIPT</span>
+                        <i>×</i>
+                        <span>HTML / CSS</span>
+                        <i>×</i>
+                    </div>
+
+                    <div class="tech-marquee-group" aria-hidden="true">
+                        <span>ESX</span>
+                        <i>×</i>
+                        <span>QB</span>
+                        <i>×</i>
+                        <span>OX_TARGET</span>
+                        <i>×</i>
+                        <span>QB_TARGET</span>
+                        <i>×</i>
+                        <span>OX_INVENTORY</span>
+                        <i>×</i>
+                        <span>OX_LIB</span>
+                        <i>×</i>
+                        <span>OXMYSQL</span>
+                        <i>×</i>
+                        <span>PMA-VOICE</span>
+                        <i>×</i>
+                        <span>NUI</span>
+                        <i>×</i>
+                        <span>FIVEM</span>
+                        <i>×</i>
+                        <span>LUA</span>
+                        <i>×</i>
+                        <span>JAVASCRIPT</span>
+                        <i>×</i>
+                        <span>HTML / CSS</span>
+                        <i>×</i>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="showcase-section reveal-on-scroll">
+
+            <div class="showcase-head">
+
+                <div>
+                    <span class="section-kicker">RESOURCE SHOWCASE</span>
+
+                    <h2>
+                        Designed to look as good
+                        <span>as it works.</span>
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="showcase-grid">
+
+                <article class="showcase-card showcase-large">
+
+                    <div class="showcase-ui banking-ui">
+
+                        <div class="ui-top">
+                            <span>DF SCRIPTS BANKING</span>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+
+                        <div class="ui-balance">
+                            <small>AVAILABLE BALANCE</small>
+                            <strong>€42,580.00</strong>
+                        </div>
+
+                        <div class="ui-cards">
+                            <div>
+                                <small>ACCOUNT</small>
+                                <strong>PRIMARY</strong>
+                            </div>
+
+                            <div>
+                                <small>STATUS</small>
+                                <strong>ACTIVE</strong>
+                            </div>
+                        </div>
+
+                        <div class="ui-transactions">
+
+                            <span>RECENT TRANSACTIONS</span>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-down"></i>
+                                Payment received
+                                <b>+ €2,500</b>
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-up"></i>
+                                Transfer
+                                <b>- €750</b>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="showcase-info">
+                        <span>01 / BANKING</span>
+                        <strong>Modern interfaces.</strong>
+                        <p>Clean UI built around the actual player experience.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="showcase-card">
+
+                    <div class="showcase-ui radio-ui">
+
+                        <div class="radio-header">
+                            <i class="fa-solid fa-radio"></i>
+                            <strong>RADIO</strong>
+                            <span>12 CONNECTED</span>
+                        </div>
+
+                        <div class="radio-frequency">
+                            <small>CHANNEL</small>
+                            <strong>10.25</strong>
+                        </div>
+
+                        <div class="radio-users">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <div class="showcase-info">
+                        <span>02 / RADIO</span>
+                        <strong>Small. Fast. Useful.</strong>
+                        <p>Interfaces that stay out of the way.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="showcase-card">
+
+                    <div class="showcase-ui code-ui">
+
+                        <div class="code-head">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <p><b>local</b> resource = <em>GetCurrentResourceName()</em></p>
+                        <p><b>if</b> resource <em>then</em></p>
+                        <p>&nbsp;&nbsp;InitializeResource()</p>
+                        <p><b>end</b></p>
+
+                    </div>
+
+                    <div class="showcase-info">
+                        <span>03 / CODE</span>
+                        <strong>Clean architecture.</strong>
+                        <p>Readable code with practical configuration.</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="updates-section reveal-on-scroll">
+
+            <div class="section-head updates-head">
+
+                <div>
+                    <span class="section-kicker">WHAT'S NEXT</span>
+
+                    <h2>
+                        More than just
+                        <span>scripts.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    DFScripts is built around a growing ecosystem of resources,
+                    custom work and community-driven development.
+                </p>
+
+            </div>
+
+            <div class="updates-grid">
+
+                <article class="update-card update-wide">
+                    <div class="update-number">01</div>
+                    <div class="update-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="update-content">
+                        <span>RESOURCE LIBRARY</span>
+                        <h3>New resources are on the way.</h3>
+                        <p>
+                            We're continuously expanding the catalog with new
+                            FiveM systems, interfaces and standalone tools.
+                        </p>
+                    </div>
+                    <div class="update-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-number">02</div>
+                    <div class="update-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="update-content">
+                        <span>ESX / QB</span>
+                        <h3>Built for compatibility.</h3>
+                        <p>
+                            Framework support is kept clear so you know what
+                            each resource works with before you buy.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-number">03</div>
+                    <div class="update-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="update-content">
+                        <span>PERFORMANCE</span>
+                        <h3>Clean code. Less overhead.</h3>
+                        <p>
+                            We focus on sensible client usage, readable code
+                            and interfaces that stay responsive.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="update-card update-wide">
+                    <div class="update-number">04</div>
+                    <div class="update-icon">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div class="update-content">
+                        <span>COMMUNITY</span>
+                        <h3>Development happens with the community.</h3>
+                        <p>
+                            Get announcements, support, previews and exclusive
+                            offers directly through the DFScripts Discord.
+                        </p>
+                    </div>
+                    <a
+                        class="update-link"
+                        href="https://discord.gg/dfscripts"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Join Discord
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="deal-section reveal-on-scroll" id="deals">
+
+            <div class="deal-badge">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+
+                <span class="section-kicker">COMMUNITY / DISCORD</span>
+
+                <h2>
+                    Exclusive deals live on Discord.
+                </h2>
+
+                <p>
+                    Get updates, releases, support and special community offers.
+                </p>
+
+            </div>
+
+            <a
+                href="https://discord.gg/dfscripts"
+                target="_blank"
+                rel="noopener"
+                class="button button-light"
+            >
+                Open Discord
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+        </section>
+
+
+        <section class="development-section reveal-on-scroll" id="development">
+
+            <div class="development-intro">
+
+                <span class="section-kicker">CUSTOM DEVELOPMENT</span>
+
+                <h2>
+                    Have an idea?
+                    <span>We build it.</span>
+                </h2>
+
+                <p>
+                    From complete FiveM systems to custom interfaces,
+                    we turn ideas into working resources.
+                </p>
+
+                <a
+                    class="button button-light"
+                    href="https://discord.gg/dfscripts"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Start a project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="development-services">
+
+                <div class="service-row">
+                    <span>01</span>
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <strong>Custom Scripts</strong>
+                        <p>Unique gameplay and server systems.</p>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <span>02</span>
+                    <i class="fa-solid fa-display"></i>
+                    <div>
+                        <strong>Custom UI</strong>
+                        <p>Modern NUI interfaces designed from scratch.</p>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <span>03</span>
+                    <i class="fa-solid fa-gears"></i>
+                    <div>
+                        <strong>Server Systems</strong>
+                        <p>Complex systems built around your requirements.</p>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <span>04</span>
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div>
+                        <strong>Optimisation</strong>
+                        <p>Cleaner logic and better resource efficiency.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="process-section reveal-on-scroll">
+
+            <div class="process-head">
+
+                <span class="section-kicker">OUR PROCESS</span>
+
+                <h2>
+                    From idea to
+                    <span>release.</span>
+                </h2>
+
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-item">
+                    <span>01</span>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Idea</strong>
+                    <p>We understand what you actually need.</p>
+                </div>
+
+                <div class="process-item">
+                    <span>02</span>
+                    <i class="fa-solid fa-code"></i>
+                    <strong>Development</strong>
+                    <p>Clean and structured development begins.</p>
+                </div>
+
+                <div class="process-item">
+                    <span>03</span>
+                    <i class="fa-solid fa-vial"></i>
+                    <strong>Testing</strong>
+                    <p>Features are tested before delivery.</p>
+                </div>
+
+                <div class="process-item">
+                    <span>04</span>
+                    <i class="fa-solid fa-rocket"></i>
+                    <strong>Delivery</strong>
+                    <p>Your finished resource is ready to use.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features reveal-on-scroll" id="docs">
+
+            <div class="feature-intro">
+
+                <span class="section-kicker">WHY DFSCRIPTS</span>
+
+                <h2>
+                    Less clutter.<br>
+                    <span>More control.</span>
+                </h2>
+
+                <p>
+                    We build resources that are easy to configure,
+                    easy to understand and enjoyable to use.
+                </p>
+
+            </div>
+
+
+            <div class="feature-list">
+
+                <div class="feature-item">
+
+                    <span>01</span>
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <div>
+                        <b>Performance first</b>
+                        <p>
+                            Efficient client and server logic with
+                            sensible resource usage.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <span>02</span>
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <div>
+                        <b>Clean architecture</b>
+                        <p>
+                            Readable configuration and systems
+                            designed to be extended.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <span>03</span>
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <div>
+                        <b>Modern experience</b>
+                        <p>
+                            Interfaces designed around actual
+                            player interaction.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <span>04</span>
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <div>
+                        <b>Community support</b>
+                        <p>
+                            Questions, updates and help directly
+                            through Discord.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="faq-section reveal-on-scroll">
+
+            <div class="faq-head">
+
+                <span class="section-kicker">FAQ</span>
+
+                <h2>
+                    Frequently asked
+                    <span>questions.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+
+                    <button type="button">
+                        <span>How do I receive my scripts?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        <p>
+                            Purchased resources will be delivered through
+                            the connected Tebex store. Support is available
+                            through the DFScripts Discord.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button type="button">
+                        <span>Do you support ESX and QB?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        <p>
+                            Our goal is broad compatibility. Individual
+                            resources will clearly show which frameworks
+                            and dependencies they support.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button type="button">
+                        <span>Can you create a custom script?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        <p>
+                            Yes. Custom scripts, systems and NUI interfaces
+                            can be discussed directly with the DFScripts team.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="faq-item">
+
+                    <button type="button">
+                        <span>Where can I get support?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        <p>
+                            Join our Discord community for support,
+                            announcements, releases and development help.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="final-cta reveal-on-scroll">
+
+            <div class="final-logo">
+                <img src="/images/logo.png" alt="DFScripts">
+            </div>
+
+            <span class="section-kicker">THE DFSCRIPTS COMMUNITY</span>
+
+            <h2>
+                Built by developers.<br>
+                <span>For FiveM.</span>
+            </h2>
+
+            <p>
+                Join the community and stay up to date with releases,
+                development and exclusive offers.
+            </p>
+
+            <a
+                href="https://discord.gg/dfscripts"
+                target="_blank"
+                rel="noopener"
+                class="button button-light"
+            >
+                Join DFScripts Discord
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <div class="product-modal" id="productModal" aria-hidden="true">
+            <div class="product-modal-backdrop" data-product-close></div>
+            <div class="product-modal-window" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+                <button class="product-modal-close" type="button" data-product-close aria-label="Close product">×</button>
+
+                <div class="product-modal-hero">
+                    <img id="productModalImage" class="product-modal-image" src="/images/logo.png" alt="Product preview">
+                    <div class="product-modal-gallery" id="productModalGallery"></div>
+                    <div class="product-modal-soon" id="productModalSoon" aria-hidden="true">SOON</div>
+                    <div class="product-modal-grid"></div>
+                    <div class="product-modal-orbit orbit-one"></div>
+                    <div class="product-modal-orbit orbit-two"></div>
+                    <div class="product-modal-code">
+                        <span>DFSCRIPTS / RESOURCE</span>
+                        <b id="productModalCode">SYSTEM</b>
+                    </div>
+                </div>
+
+                <div class="product-modal-content">
+                    <div class="product-modal-heading">
+                        <div>
+                            <span id="productModalCategory">SYSTEM</span>
+                            <h2 id="productModalTitle">Product</h2>
+                        </div>
+                        <strong id="productModalPrice">€0.00</strong>
+                    </div>
+
+                    <p id="productModalDescription"></p>
+
+                    <div class="product-modal-divider"></div>
+
+                    <div class="product-modal-section-title">WHAT YOU GET</div>
+                    <div class="product-modal-features" id="productModalFeatures"></div>
+
+                    <div class="product-modal-bottom">
+                        <div>
+                            <span>AVAILABILITY</span>
+                            <b id="productModalAvailability"><i></i> UNAVAILABLE</b>
+                        </div>
+                        <div class="product-modal-actions">
+                            <button class="product-modal-cart" type="button" id="productModalCart">
+                                <span>ADD TO CART</span>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            <button class="product-modal-discord" type="button" id="productModalDiscord">
+                                <span>GET NOTIFIED / OPEN DISCORD</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="discord-pop" id="signinPop">
+
+        <button
+            class="close"
+            id="closeSignin"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="pop-icon">
+            <i class="fa-brands fa-discord"></i>
+        </div>
+
+        <div class="pop-copy">
+            <b>Join DFScripts</b>
+            <p>
+                Support, releases and community deals in one place.
+            </p>
+        </div>
+
+        <div class="pop-actions">
+
+            <button id="later" type="button">
+                Maybe later
+            </button>
+
+            <a
+                href="https://discord.gg/dfscripts"
+                target="_blank"
+                rel="noopener"
+            >
+                Join
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <aside class="offer-pop" id="discountPop">
+
+        <button
+            class="close"
+            id="closeDiscount"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="offer-title">
+            <span>NEW CUSTOMER</span>
+            <b>SOON</b>
+        </div>
+
+        <strong>Store launch offer</strong>
+
+        <p>
+            Discounts and special offers will be available
+            through the DFScripts store and Discord.
+        </p>
+
+    </aside>
+
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+        aria-hidden="true"
+    >
+
+        <div class="cart-head">
+
+            <div>
+                <span class="section-kicker">YOUR SELECTION</span>
+
+                <h2>
+                    Your cart
+                    <span id="cartItemsLabel">(0)</span>
+                </h2>
+            </div>
+
+            <button
+                class="cart-close"
+                id="cartClose"
+                type="button"
+                aria-label="Close cart"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cart-body" id="cartBody">
+
+            <div class="cart-empty" id="cartEmpty">
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <strong>Your cart is empty</strong>
+
+                <p>
+                    Add a resource from the catalogue and it will
+                    appear here.
+                </p>
+
+                <button type="button" id="continueShopping">
+                    Browse resources
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <div class="cart-list" id="cartList"></div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <strong id="cartTotal">€0.00</strong>
+            </div>
+
+            <button
+                class="checkout-button"
+                id="checkoutButton"
+                type="button"
+            >
+                Checkout Tebex
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <small>
+                Tebex checkout will be connected when the catalogue is ready.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <div class="toast" id="toast">
+        The catalogue is coming soon.
+    </div>
+
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <img src="/images/logo.png" alt="DFScripts">
+            </div>
+
+            <div>
+                <b>DFSCRIPTS</b>
+                <span>FIVEM DEVELOPMENT</span>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#store">Store</a>
+            <a href="#development">Development</a>
+            <a href="#docs">Docs</a>
+
+            <a
+                href="https://discord.gg/dfscripts"
+                target="_blank"
+                rel="noopener"
+            >
+                Discord
+            </a>
+        </div>
+
+        <p>
+            © <span id="year"></span>
+            DFScripts. Not affiliated with Rockstar Games or Cfx.re.
+        </p>
+
+    </footer>
+
+
+    <script src="main.js?v=9"></script>
+
+</body>
+</html>
